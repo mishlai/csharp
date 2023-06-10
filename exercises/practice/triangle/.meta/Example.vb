@@ -1,3 +1,4 @@
+Imports System
 Imports System.Linq
 
 Public Enum TriangleKind
@@ -7,17 +8,17 @@ Public Enum TriangleKind
     Invalid
 End Enum
 
-Public Module Triangle
-    Public Function IsScaleneMethod(ByVal side1 As Double, ByVal side2 As Double, ByVal side3 As Double) As Boolean
+Module Triangle
+    Function IsScalene(ByVal side1 As Double, ByVal side2 As Double, ByVal side3 As Double) As Boolean
         Return Kind(side1, side2, side3) = TriangleKind.Scalene
     End Function
 
-    Public Function IsIsoscelesMethod(ByVal side1 As Double, ByVal side2 As Double, ByVal side3 As Double) As Boolean
-        Dim triangle = Triangle.Kind(side1, side2, side3)
+    Function IsIsosceles(ByVal side1 As Double, ByVal side2 As Double, ByVal side3 As Double) As Boolean
+        Dim triangle = Kind(side1, side2, side3)
         Return triangle = TriangleKind.Isosceles OrElse triangle = TriangleKind.Equilateral
     End Function
 
-    Public Function IsEquilateralMethod(ByVal side1 As Double, ByVal side2 As Double, ByVal side3 As Double) As Boolean
+    Function IsEquilateral(ByVal side1 As Double, ByVal side2 As Double, ByVal side3 As Double) As Boolean
         Return Kind(side1, side2, side3) = TriangleKind.Equilateral
     End Function
 
@@ -26,7 +27,7 @@ Public Module Triangle
             Return TriangleKind.Invalid
         End If
 
-        Dim uniqueSides = Triangle.UniqueSides(side1, side2, side3)
+        Dim uniqueSides As Integer = UniqueSides(side1, side2, side3)
         If uniqueSides = 1 Then Return TriangleKind.Equilateral
         If uniqueSides = 2 Then Return TriangleKind.Isosceles
         Return TriangleKind.Scalene
@@ -45,7 +46,7 @@ Public Module Triangle
     End Function
 
     Private Function UniqueSides(ByVal side1 As Double, ByVal side2 As Double, ByVal side3 As Double) As Integer
-        Dim sides = {side1, side2, side3}
+        Dim sides As Double() = {side1, side2, side3}
         Return sides.Distinct().Count()
     End Function
 End Module
