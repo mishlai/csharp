@@ -13,7 +13,7 @@ Public Module Poker
    {"4,1", 7}
 }
 
-    Public Function BestHandsMethod(ByVal hands As IEnumerable(Of String)) As IEnumerable(Of String)
+    Public Function BestHands(ByVal hands As IEnumerable(Of String)) As IEnumerable(Of String)
         Dim rankingHands = hands.[Select](Function(card) New With {
             card,
             .Rank = HandRank(card)
@@ -53,8 +53,8 @@ Public Module Poker
         Return ranks
     End Function
 
-    Private Function Rank(ByVal rank As Char) As Integer
-        Return "--23456789TJQKA".IndexOf(rank)
+    Private Function Rank(ByVal rankChar As Char) As Integer
+        Return "--23456789TJQKA".IndexOf(rankChar)
     End Function
 
     Private Class Card
