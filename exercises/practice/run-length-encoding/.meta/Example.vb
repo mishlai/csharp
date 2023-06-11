@@ -4,7 +4,7 @@ Imports System.Linq
 Imports System.Text.RegularExpressions
 
 Public Module RunLengthEncoding
-    Public Function EncodeMethod(ByVal input As String) As String
+    Public Function Encode(ByVal input As String) As String
         Return String.Join("", GroupConsecutive(input).[Select](New Func(Of Tuple(Of Char, Integer), String)(AddressOf EncodeConsecutive)))
     End Function
 
@@ -33,7 +33,7 @@ Public Module RunLengthEncoding
         Yield Tuple.Create(current, count)
     End Function
 
-    Public Function DecodeMethod(ByVal input As String) As String
+    Public Function Decode(ByVal input As String) As String
         Return String.Join("", Regex.Matches(input, "(\d+[^\d]|[^\d])").Cast(Of Match)().[Select](New Func(Of Match, String)(AddressOf Decode)))
     End Function
 

@@ -1,7 +1,7 @@
 Imports System.Collections.Generic
 
 Public Class PrimeFactors
-    Public Shared Function FactorsMethod(ByVal number As Long) As Long()
+    Public Shared Function Factors(ByVal number As Long) As Long()
         Dim primes = New List(Of Long)()
         Dim divisor = 2
         While number > 1

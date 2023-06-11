@@ -2,7 +2,7 @@ Imports System.Collections.Generic
 
 Public Module PythagoreanTriplet
 
-    Public Iterator Function TripletsWithSumMethod(ByVal sum As Integer) As IEnumerable(Of (Integer, Integer, Integer))
+    Public Iterator Function TripletsWithSum(ByVal sum As Integer) As IEnumerable(Of (Integer, Integer, Integer))
         Dim triplets = New List(Of (Integer, Integer, Integer))()
         For c = sum / 2 To 2 Step -1
             Dim left = sum - c

@@ -1,6 +1,6 @@
 Imports System
 
-Public Enum DirectionType
+Public Enum Direction
     North
     East
     South
@@ -16,7 +16,7 @@ Public Class RobotSimulator
         Y = y
     End Sub
 
-    Public Property DirectionProp As Direction
+    Public Property Direction As Direction
         Get
             Return _DirectionProp
         End Get
@@ -25,7 +25,7 @@ Public Class RobotSimulator
         End Set
     End Property
 
-    Public Property XProp As Integer
+    Public Property X As Integer
         Get
             Return _XProp
         End Get
@@ -34,7 +34,7 @@ Public Class RobotSimulator
         End Set
     End Property
 
-    Public Property YProp As Integer
+    Public Property Y As Integer
         Get
             Return _YProp
         End Get
@@ -43,7 +43,7 @@ Public Class RobotSimulator
         End Set
     End Property
 
-    Public Sub MoveMethod(ByVal instructions As String)
+    Public Sub Move(ByVal instructions As String)
         For Each instruction In instructions
             Move(instruction)
         Next

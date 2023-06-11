@@ -28,11 +28,11 @@ Public Module ScaleGenerator
         Return scale.Skip(index).Concat(scale.Take(index)).ToArray()
     End Function
 
-    Public Function ChromaticMethod(ByVal tonic As String) As String()
+    Public Function Chromatic(ByVal tonic As String) As String()
         Return Interval(tonic, "mmmmmmmmmmmm").SkipLast(1).ToArray()
     End Function
 
-    Public Function IntervalMethod(ByVal tonic As String, ByVal pattern As String) As String()
+    Public Function Interval(ByVal tonic As String, ByVal pattern As String) As String()
         Dim scale = ScaleGenerator.Scale(tonic)
         Dim index = Array.FindIndex(scale, Function(pitch) String.Equals(pitch, tonic, StringComparison.OrdinalIgnoreCase))
         Dim shiftedScale = Shift(index, scale)

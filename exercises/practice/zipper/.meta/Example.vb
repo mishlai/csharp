@@ -14,9 +14,9 @@ Public Class BinTree
         Me.New(tree.Value, tree.Left, tree.Right)
     End Sub
 
-    Public ReadOnly Property ValueProp As Integer
-    Public ReadOnly Property LeftProp As BinTree
-    Public ReadOnly Property RightProp As BinTree
+    Public ReadOnly Property Value As Integer
+    Public ReadOnly Property Left As BinTree
+    Public ReadOnly Property Right As BinTree
 
     Public Function Equals(ByVal other As BinTree) As Boolean Implements IEquatable(Of BinTree).Equals
         If other Is Nothing OrElse Not Object.Equals(Value, other.Value) Then Return False
@@ -67,37 +67,37 @@ Public Class Zipper
         Me.crumbs = crumbs
     End Sub
 
-    Public Function ValueMethod() As Integer
+    Public Function Value() As Integer
         Return valueField
     End Function
 
-    Public Function SetValueMethod(ByVal newValue As Integer) As Zipper
+    Public Function SetValue(ByVal newValue As Integer) As Zipper
         Return New Zipper(newValue, leftField, rightField, crumbs)
     End Function
 
-    Public Function SetLeftMethod(ByVal binTree As BinTree) As Zipper
+    Public Function SetLeft(ByVal binTree As BinTree) As Zipper
         Return New Zipper(valueField, binTree, rightField, crumbs)
     End Function
 
-    Public Function SetRightMethod(ByVal binTree As BinTree) As Zipper
+    Public Function SetRight(ByVal binTree As BinTree) As Zipper
         Return New Zipper(valueField, leftField, binTree, crumbs)
     End Function
 
-    Public Function LeftMethod() As Zipper
+    Public Function Left() As Zipper
         If leftField Is Nothing Then Return Nothing
 
         Dim newCrumbs = {New BinTreeLeftCrumb(valueField, rightField)}.Concat(crumbs).ToList()
         Return New Zipper(leftField.Value, leftField.Left, leftField.Right, newCrumbs)
     End Function
 
-    Public Function RightMethod() As Zipper
+    Public Function Right() As Zipper
         If rightField Is Nothing Then Return Nothing
 
         Dim newCrumbs = {New BinTreeRightCrumb(valueField, leftField)}.Concat(crumbs).ToList()
         Return New Zipper(rightField.Value, rightField.Left, rightField.Right, newCrumbs)
     End Function
 
-    Public Function UpMethod() As Zipper
+    Public Function Up() As Zipper
         If crumbs.Count = 0 Then Return Nothing
 
         Dim firstCrumb = crumbs(0)
@@ -110,7 +110,7 @@ Public Class Zipper
         Return Nothing
     End Function
 
-    Public Function ToTreeMethod() As BinTree
+    Public Function ToTree() As BinTree
         Dim tree = New BinTree(valueField, leftField, rightField)
 
         For Each crumb In crumbs
@@ -127,7 +127,7 @@ Public Class Zipper
         Return ToTree().Equals(other.ToTree())
     End Function
 
-    Public Shared Function FromTreeMethod(ByVal tree As BinTree) As Zipper
+    Public Shared Function FromTree(ByVal tree As BinTree) As Zipper
         Return New Zipper(tree.Value, tree.Left, tree.Right, New List(Of BinTreeCrumb)())
     End Function
 End Class

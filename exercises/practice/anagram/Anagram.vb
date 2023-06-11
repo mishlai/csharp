@@ -5,7 +5,7 @@ Public Class Anagram
         Throw New NotImplementedException("You need to implement this function.")
     End Sub
 
-    Public Function FindAnagramsMethod(ByVal potentialMatches As String()) As String()
+    Public Function FindAnagrams(ByVal potentialMatches As String()) As String()
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 End Class

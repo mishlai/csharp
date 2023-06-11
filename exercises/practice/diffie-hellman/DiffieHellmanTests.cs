@@ -8,9 +8,9 @@ public class DiffieHellmanTests
     public void Private_key_is_greater_than_1_and_less_than_p()
     {
         var p = new BigInteger(7919);
-        var privateKeys = Enumerable.Range(0, 1000).Select(_ => DiffieHellman.PrivateKey(p)).ToArray();
-        foreach (var privateKey in privateKeys)
+        for (var i = 0; i < 1000; i++)
         {
+            var privateKey = DiffieHellman.PrivateKey(p);
             Assert.InRange(privateKey, new BigInteger(1), p);
         }
     }

@@ -5,19 +5,19 @@ Public Class CircularBuffer(Of T)
         Throw New NotImplementedException("You need to implement this function.")
     End Sub
 
-    Public Function ReadMethod() As T
+    Public Function Read() As T
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 
-    Public Sub WriteMethod(ByVal value As T)
+    Public Sub Write(ByVal value As T)
         Throw New NotImplementedException("You need to implement this function.")
     End Sub
 
-    Public Sub OverwriteMethod(ByVal value As T)
+    Public Sub Overwrite(ByVal value As T)
         Throw New NotImplementedException("You need to implement this function.")
     End Sub
 
-    Public Sub ClearMethod()
+    Public Sub Clear()
         Throw New NotImplementedException("You need to implement this function.")
     End Sub
 End Class

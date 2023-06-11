@@ -5,8 +5,8 @@ Imports Sprache
 
 Public Class SgfTree
     Implements IEquatable(Of SgfTree)
-    Public ReadOnly Property DataProp As IDictionary(Of String, String())
-    Public ReadOnly Property ChildrenProp As SgfTree()
+    Public ReadOnly Property Data As IDictionary(Of String, String())
+    Public ReadOnly Property Children As SgfTree()
 
     Public Sub New(ByVal data As IDictionary(Of String, String()), ParamArray children As SgfTree())
         Me.Data = data
@@ -64,7 +64,7 @@ Public Module SgfParser
         Return From open In Parse.Char("("c) From nodes In SgfParser.Node().Many() From children In SgfParser.Tree().Many() From close In Parse.Char(")"c) Select SgfParser.NodesToTree(nodes, children)
     End Function
 
-    Public Function ParseTreeMethod(ByVal input As String) As SgfTree
+    Public Function ParseTree(ByVal input As String) As SgfTree
         Try
             Return SgfParser.Tree().Parse(input)
         Catch e As Exception

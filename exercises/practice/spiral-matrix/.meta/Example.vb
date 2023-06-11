@@ -1,5 +1,5 @@
 Public Module SpiralMatrix
-    Public Function GetMatrixMethod(ByVal size As Integer) As Integer(,)
+    Public Function GetMatrix(ByVal size As Integer) As Integer(,)
         Dim spiral = New Integer(size - 1, size - 1) {}
         Dim numbersToPlace = size * size
 

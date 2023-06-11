@@ -3,7 +3,7 @@ Imports System.Collections.Generic
 Imports System.Linq
 
 Public Module PalindromeProducts
-    Public Function SmallestMethod(ByVal minFactor As Integer, ByVal maxFactor As Integer) As (Integer, IEnumerable(Of (Integer, Integer)))
+    Public Function Smallest(ByVal minFactor As Integer, ByVal maxFactor As Integer) As (Integer, IEnumerable(Of (Integer, Integer)))
         If minFactor > maxFactor Then Throw New ArgumentException()
 
         Dim smallestPalindromeProduct = Integer.MaxValue
@@ -38,7 +38,7 @@ Public Module PalindromeProducts
         Return (smallestPalindromeProduct, smallestPalindromeProductFactors)
     End Function
 
-    Public Function LargestMethod(ByVal minFactor As Integer, ByVal maxFactor As Integer) As (Integer, IEnumerable(Of (Integer, Integer)))
+    Public Function Largest(ByVal minFactor As Integer, ByVal maxFactor As Integer) As (Integer, IEnumerable(Of (Integer, Integer)))
         If minFactor > maxFactor Then Throw New ArgumentException()
 
         Dim largestPalindromeProduct = Integer.MinValue

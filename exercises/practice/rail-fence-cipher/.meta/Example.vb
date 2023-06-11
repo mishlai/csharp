@@ -10,11 +10,11 @@ Public Class RailFenceCipher
         _size = rails * 2 - 2
     End Sub
 
-    Public Function EncodeMethod(ByVal input As String) As String
+    Public Function Encode(ByVal input As String) As String
         Return input.[Select](Function(c, i) Tuple.Create(Track(i), c)).GroupBy(Function(x) x.Item1).[Select](Function(x) New String(x.[Select](Function(y) y.Item2).ToArray())).Aggregate("", Function(acc, x) acc & x)
     End Function
 
-    Public Function DecodeMethod(ByVal input As String) As String
+    Public Function Decode(ByVal input As String) As String
         Return Enumerable.Range(0, input.Length).GroupBy(New Func(Of Integer, Integer)(AddressOf Track)).SelectMany(Function(x) x).Zip(input, New Func(Of Integer, Char, Tuple(Of Integer, Char))(AddressOf Tuple.Create)).OrderBy(Function(x) x.Item1).Aggregate("", Function(s, tuple) s & tuple.Item2.ToString())
     End Function
 

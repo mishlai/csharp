@@ -3,7 +3,7 @@ Imports System.Collections.Generic
 Imports System.Linq
 
 Public Module NthPrime
-    Public Function PrimeMethod(ByVal nth As Integer) As Integer
+    Public Function Prime(ByVal nth As Integer) As Integer
         If nth < 1 Then Throw New ArgumentOutOfRangeException()
 
         Return Primes().Skip(nth - 1).First()

@@ -2,7 +2,7 @@ Imports System
 Imports System.Linq
 
 Public Module Rectangles
-    Public Function CountMethod(ByVal rows As String()) As Integer
+    Public Function Count(ByVal rows As String()) As Integer
         Dim grid = ParseGrid(rows)
         Dim corners = FindCorners(grid)
         Return corners.Sum(Function(corner) RectangleForCorner(corner, corners, grid))

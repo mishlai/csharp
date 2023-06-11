@@ -2,7 +2,7 @@ Imports System
 Imports System.Collections.Generic
 
 Public Module NucleotideCount
-    Public Function CountMethod(ByVal sequence As String) As IDictionary(Of Char, Integer)
+    Public Function Count(ByVal sequence As String) As IDictionary(Of Char, Integer)
         Dim nucleotideCounts = New Dictionary(Of Char, Integer) From {
             {"A"c, 0},
             {"T"c, 0},

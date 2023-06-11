@@ -1,5 +1,5 @@
 Public Module Raindrops
-    Public Function ConvertMethod(ByVal number As Integer) As String
+    Public Function Convert(ByVal number As Integer) As String
         Dim result = ""
         If number Mod 3 = 0 Then result += "Pling"
         If number Mod 5 = 0 Then result += "Plang"

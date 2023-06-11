@@ -2,7 +2,7 @@ Imports System
 Imports System.Linq
 
 Public Class Trinary
-    Public Shared Function ToDecimalMethod(ByVal trinary As String) As Integer
+    Public Shared Function ToDecimal(ByVal trinary As String) As Integer
         If Trinary.IsNotValidTrinary(trinary) Then Return 0
 
         Return Enumerable.Select(Of Char, Global.System.Int32)(trinary, CType(Function(c, i) CInt(Integer.Parse(CStr(c.ToString())) * Trinary.ThreeToThePowerOf(CInt(trinary.Length - i - 1))), Func(Of Char, Integer, Integer))).Sum()

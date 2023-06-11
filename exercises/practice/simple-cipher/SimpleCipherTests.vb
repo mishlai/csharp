@@ -14,7 +14,7 @@ Public Class SimpleCipherTests
     End Sub
 
     <Fact(Skip:="Remove this Skip property to run this test")>
-    Public Sub Random_key_cipher_is_reversible_i_e_if_you_apply_decode_in_a_encoded_result_you_must_see_the_same_plaintext_encode_parameter_as_a_result_of_the_decode_method()
+    Public Sub Random_key_cipher_is_reversible_i_e_if_you_apply_decode_in_a_encoded_result_you_must_see_the_same_plaintext_encode_parameter_as_a_result_of_the_decode_()
         Dim sut = New SimpleCipher()
         Assert.Equal("abcdefghij", sut.Decode(sut.Encode("abcdefghij")))
     End Sub
@@ -38,7 +38,7 @@ Public Class SimpleCipherTests
     End Sub
 
     <Fact(Skip:="Remove this Skip property to run this test")>
-    Public Sub Substitution_cipher_is_reversible_i_e_if_you_apply_decode_in_a_encoded_result_you_must_see_the_same_plaintext_encode_parameter_as_a_result_of_the_decode_method()
+    Public Sub Substitution_cipher_is_reversible_i_e_if_you_apply_decode_in_a_encoded_result_you_must_see_the_same_plaintext_encode_parameter_as_a_result_of_the_decode_()
         Dim sut = New SimpleCipher("abcdefghij")
         Assert.Equal("abcdefghij", sut.Decode(sut.Encode("abcdefghij")))
     End Sub

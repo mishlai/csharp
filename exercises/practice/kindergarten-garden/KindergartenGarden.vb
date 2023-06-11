@@ -1,7 +1,7 @@
 Imports System
 Imports System.Collections.Generic
 
-Public Enum PlantType
+Public Enum Plant
     Violets
     Radishes
     Clover
@@ -12,7 +12,7 @@ Public Class KindergartenGarden
     Public Sub New(ByVal diagram As String)
     End Sub
 
-    Public Function PlantsMethod(ByVal student As String) As IEnumerable(Of Plant)
+    Public Function Plants(ByVal student As String) As IEnumerable(Of Plant)
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 End Class

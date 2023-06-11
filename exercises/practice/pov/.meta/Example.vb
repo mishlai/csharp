@@ -60,14 +60,14 @@ Public Class TreeZipper
 End Class
 
 Public Module Pov
-    Public Function FromPovMethod(ByVal graph As Tree, ByVal value As String) As Tree
+    Public Function FromPov(ByVal graph As Tree, ByVal value As String) As Tree
         Dim zipper = FindNode(value, GraphToZipper(graph))
         If zipper Is Nothing Then Throw New ArgumentException()
 
         Return ChangeParent(zipper)
     End Function
 
-    Public Function PathToMethod(ByVal value1 As String, ByVal value2 As String, ByVal graph As Tree) As IEnumerable(Of String)
+    Public Function PathTo(ByVal value1 As String, ByVal value2 As String, ByVal graph As Tree) As IEnumerable(Of String)
         Dim zipper = FindNode(value2, GraphToZipper(FromPov(graph, value1)))
         If zipper Is Nothing Then Throw New ArgumentException()
 

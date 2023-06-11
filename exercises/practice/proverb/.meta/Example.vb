@@ -2,7 +2,7 @@ Imports System
 Imports System.Linq
 
 Public Module Proverb
-    Public Function ReciteMethod(ByVal subjects As String()) As String()
+    Public Function Recite(ByVal subjects As String()) As String()
         Dim line As Func(Of Integer, String) = Function(lineIndex)
                                                    If lineIndex = subjects.Length Then
                                                        Return $"And all for the want of a {subjects(0)}."

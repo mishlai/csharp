@@ -10,7 +10,7 @@ Public Module Diamond
     End Function
 
     Private Function GetLetters(ByVal target As Char) As Tuple(Of Char, Integer)()
-        Return Enumerable.Range("A"c, target - "A"c + 1).[Select](Function(c, i) Tuple.Create(Microsoft.VisualBasic.ChrW(c), i)).ToArray()
+        Return Enumerable.Range(Asc("A"), Asc(target) - Asc("A") + 1).[Select](Function(c, i) Tuple.Create(Microsoft.VisualBasic.ChrW(c), i)).ToArray()
     End Function
 
     Private Function MakeLine(ByVal letterCount As Integer, ByVal rowLetter As Tuple(Of Char, Integer)) As String

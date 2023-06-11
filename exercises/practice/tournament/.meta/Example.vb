@@ -79,7 +79,7 @@ Public Class Tournament
         writer.Flush()
     End Sub
 
-    Public Shared Sub TallyMethod(ByVal inStream As Stream, ByVal outStream As Stream)
+    Public Shared Sub Tally(ByVal inStream As Stream, ByVal outStream As Stream)
         Dim tournament = New Tournament()
         Dim encoding = New UTF8Encoding()
         Dim inReader = New StreamReader(inStream, encoding)

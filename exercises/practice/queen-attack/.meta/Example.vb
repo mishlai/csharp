@@ -6,12 +6,12 @@ Public Class Queen
         Me.Column = column
     End Sub
 
-    Public ReadOnly Property RowProp As Integer
-    Public ReadOnly Property ColumnProp As Integer
+    Public ReadOnly Property Row As Integer
+    Public ReadOnly Property Column As Integer
 End Class
 
 Public Module QueenAttack
-    Public Function CanAttackMethod(ByVal white As Queen, ByVal black As Queen) As Boolean
+    Public Function CanAttack(ByVal white As Queen, ByVal black As Queen) As Boolean
         If white.Row = black.Row AndAlso white.Column = black.Column Then
             Throw New ArgumentException("The queens cannot be positioned at the same place.")
         End If
@@ -19,7 +19,7 @@ Public Module QueenAttack
         Return black.Row = white.Row OrElse black.Column = white.Column OrElse Math.Abs(black.Row - white.Row) = Math.Abs(black.Column - white.Column)
     End Function
 
-    Public Function CreateMethod(ByVal row As Integer, ByVal column As Integer) As Queen
+    Public Function Create(ByVal row As Integer, ByVal column As Integer) As Queen
         Const MIN_VALUE = 0
         Const MAX_VALUE = 7
 

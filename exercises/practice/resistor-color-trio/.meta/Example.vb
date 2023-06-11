@@ -3,7 +3,7 @@ Imports System
 Public Module ResistorColorTrio
     Private Const KiloOhms As Integer = 1_000
     Private ReadOnly AllColors As String() = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"}
-    Public Function LabelMethod(ByVal colors As String()) As String
+    Public Function Label(ByVal colors As String()) As String
         Return $"{(If(CSharpImpl.__Assign(_value, TryCast(GetValue(colors), Integer)) IsNot Nothing AndAlso _value >= KiloOhms, _value / KiloOhms, _value))} " & ResistorColorTrio.GetUnit(_value)
     End Function
     Private Function GetValue(ByVal colors As String()) As Integer

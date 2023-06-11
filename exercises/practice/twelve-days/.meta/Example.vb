@@ -2,7 +2,7 @@ Imports System.Linq
 Imports System.Text
 
 Public Module TwelveDays
-    Public Function ReciteMethod(ByVal verseNumber As Integer) As String
+    Public Function Recite(ByVal verseNumber As Integer) As String
         Select Case verseNumber
             Case 1
                 Return "On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree."
@@ -33,7 +33,7 @@ Public Module TwelveDays
         End Select
     End Function
 
-    Public Function ReciteMethod(ByVal start As Integer, ByVal [end] As Integer) As String
+    Public Function Recite(ByVal start As Integer, ByVal [end] As Integer) As String
         Dim stringBuilder = New StringBuilder()
 
         Enumerable.ToList(Enumerable.Range(start, [end] - start + 1)).ForEach(Sub(i) stringBuilder.Append(Recite(i)).Append(vbLf))

@@ -2,7 +2,7 @@ Imports System
 Imports System.Linq
 
 Public Class Octal
-    Public Shared Function ToDecimalMethod(ByVal octal As String) As Integer
+    Public Shared Function ToDecimal(ByVal octal As String) As Integer
         If Octal.IsNotValidOctal(octal) Then Return 0
 
         Return Enumerable.Select(Of Char, Global.System.Int32)(octal, CType(Function(c, i) CInt(Integer.Parse(CStr(c.ToString())) * Octal.EightToThePowerOf(CInt(octal.Length - i - 1))), Func(Of Char, Integer, Integer))).Sum()

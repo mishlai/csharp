@@ -70,7 +70,7 @@ Public Module Markdown
     Private Function ParseLineItem(ByVal markdown As String, ByVal list As Boolean) As Tuple(Of Boolean, String)
         If Not markdown.StartsWith(Markdown.ListItemMarkdown) Then Return Nothing
 
-        Dim innerHtml = markdown.Substring(2).ParseTextMethod(True).WrapInTag(Markdown.ListItemTag)
+        Dim innerHtml = markdown.Substring(2).ParseText(True).WrapInTag(Markdown.ListItemTag)
 
         Dim html = If(list, innerHtml, Markdown.OpeningTag(Markdown.ListTag) & innerHtml)
         Return Tuple.Create(True, html)
@@ -78,9 +78,9 @@ Public Module Markdown
 
     <Extension()>
     Private Function ParseParagraph(ByVal markdown As String, ByVal list As Boolean) As Tuple(Of Boolean, String)
-        If list Then Return Tuple.Create(False, Markdown.ClosingTag(Markdown.ListTag) & markdown.ParseTextMethod(False).ToString())
+        If list Then Return Tuple.Create(False, Markdown.ClosingTag(Markdown.ListTag) & markdown.ParseText(False).ToString())
 
-        Return Tuple.Create(False, markdown.ParseTextMethod(list))
+        Return Tuple.Create(False, markdown.ParseText(list))
     End Function
 
     Private Function ParseLine(ByVal accumulator As Tuple(Of Boolean, String), ByVal markdown As String) As Tuple(Of Boolean, String)

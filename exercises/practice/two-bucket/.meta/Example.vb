@@ -2,15 +2,15 @@ Imports System
 Imports System.Collections.Generic
 Imports System.Linq
 
-Public Enum BucketType
+Public Enum Bucket
     One
     Two
 End Enum
 
 Public Class TwoBucketResult
-    Public Property MovesProp As Integer
-    Public Property GoalBucketProp As Bucket
-    Public Property OtherBucketProp As Integer
+    Public Property Moves As Integer
+    Public Property GoalBucket As Bucket
+    Public Property OtherBucket As Integer
 End Class
 
 Public Class TwoBucket
@@ -36,7 +36,7 @@ Public Class TwoBucket
         Return If(i = 0, {target, src}, {src, target})
     End Function
 
-    Public Function MeasureMethod(ByVal goal As Integer) As TwoBucketResult
+    Public Function Measure(ByVal goal As Integer) As TwoBucketResult
         Dim invalid = {0, 0}
         invalid(1 - startBucket) = sizes(1 - startBucket)
         Dim invalidStr = String.Join(",", invalid)

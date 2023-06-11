@@ -5,35 +5,35 @@ Public Class CustomSet
         Throw New NotImplementedException("You need to implement this function.")
     End Sub
 
-    Public Function AddMethod(ByVal value As Integer) As CustomSet
+    Public Function Add(ByVal value As Integer) As CustomSet
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 
-    Public Function EmptyMethod() As Boolean
+    Public Function Empty() As Boolean
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 
-    Public Function ContainsMethod(ByVal value As Integer) As Boolean
+    Public Function Contains(ByVal value As Integer) As Boolean
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 
-    Public Function SubsetMethod(ByVal right As CustomSet) As Boolean
+    Public Function Subset(ByVal right As CustomSet) As Boolean
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 
-    Public Function DisjointMethod(ByVal right As CustomSet) As Boolean
+    Public Function Disjoint(ByVal right As CustomSet) As Boolean
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 
-    Public Function IntersectionMethod(ByVal right As CustomSet) As CustomSet
+    Public Function Intersection(ByVal right As CustomSet) As CustomSet
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 
-    Public Function DifferenceMethod(ByVal right As CustomSet) As CustomSet
+    Public Function Difference(ByVal right As CustomSet) As CustomSet
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 
-    Public Function UnionMethod(ByVal right As CustomSet) As CustomSet
+    Public Function Union(ByVal right As CustomSet) As CustomSet
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 End Class

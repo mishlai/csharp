@@ -1,13 +1,13 @@
 Imports System
 
-Public Enum ClassificationType
+Public Enum Classification
     Perfect
     Abundant
     Deficient
 End Enum
 
 Public Module PerfectNumbers
-    Public Function ClassifyMethod(ByVal number As Integer) As Classification
+    Public Function Classify(ByVal number As Integer) As Classification
         If number < 1 Then Throw New ArgumentOutOfRangeException()
 
         Dim sumOfFactors = 0

@@ -35,35 +35,35 @@ Public Class SpaceAge
         Return Math.Round(seconds / (EARTH_ORBIT_IN_SECONDS * periodInEarthYears), 2)
     End Function
 
-    Public Function OnEarthMethod() As Double
+    Public Function OnEarth() As Double
         Return CalculateAge(earthYearToPlanetPeriod(Planet.Earth))
     End Function
 
-    Public Function OnMercuryMethod() As Double
+    Public Function OnMercury() As Double
         Return CalculateAge(earthYearToPlanetPeriod(Planet.Mercury))
     End Function
 
-    Public Function OnVenusMethod() As Double
+    Public Function OnVenus() As Double
         Return CalculateAge(earthYearToPlanetPeriod(Planet.Venus))
     End Function
 
-    Public Function OnMarsMethod() As Double
+    Public Function OnMars() As Double
         Return CalculateAge(earthYearToPlanetPeriod(Planet.Mars))
     End Function
 
-    Public Function OnJupiterMethod() As Double
+    Public Function OnJupiter() As Double
         Return CalculateAge(earthYearToPlanetPeriod(Planet.Jupiter))
     End Function
 
-    Public Function OnSaturnMethod() As Double
+    Public Function OnSaturn() As Double
         Return CalculateAge(earthYearToPlanetPeriod(Planet.Saturn))
     End Function
 
-    Public Function OnUranusMethod() As Double
+    Public Function OnUranus() As Double
         Return CalculateAge(earthYearToPlanetPeriod(Planet.Uranus))
     End Function
 
-    Public Function OnNeptuneMethod() As Double
+    Public Function OnNeptune() As Double
         Return CalculateAge(earthYearToPlanetPeriod(Planet.Neptune))
     End Function
 End Class

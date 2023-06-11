@@ -17,19 +17,19 @@ Public Class DiamondTests
         Return x.Substring(x.LastIndexOfAny(AllLetters) + 1)
     End Function
     Private Function GetLetterRange(ByVal min As Char, ByVal max As Char) As Char()
-        Return Enumerable.Range(min, max - min + 1).[Select](Function(i) Microsoft.VisualBasic.ChrW(i)).ToArray()
+        Return Enumerable.Range(Asc(min), Asc(max) - Asc(min) + 1).[Select](Function(i) Microsoft.VisualBasic.ChrW(i)).ToArray()
     End Function
 
     <DiamondProperty>
     Public Sub Diamond_is_not_empty(ByVal letter As Char)
-        Dim actual = Make(letter)
+        Dim actual = Diamond.Make(letter)
 
         Assert.NotEmpty(actual)
     End Sub
 
     <DiamondProperty(Skip:="Remove this Skip property to run this test")>
     Public Sub First_row_contains_a(ByVal letter As Char)
-        Dim actual = Make(letter)
+        Dim actual = Diamond.Make(letter)
         Dim rows = DiamondTests.Rows(actual)
         Dim firstRowCharacters = Enumerable.First(rows).Trim()
 
@@ -38,7 +38,7 @@ Public Class DiamondTests
 
     <DiamondProperty(Skip:="Remove this Skip property to run this test")>
     Public Sub All_rows_must_have_symmetric_contour(ByVal letter As Char)
-        Dim actual = Make(letter)
+        Dim actual = Diamond.Make(letter)
         Dim rows = DiamondTests.Rows(actual)
 
         Assert.All(rows, Sub(row) Assert.Equal(LeadingSpaces(row), TrailingSpaces(row)))
@@ -46,7 +46,7 @@ Public Class DiamondTests
 
     <DiamondProperty(Skip:="Remove this Skip property to run this test")>
     Public Sub Top_of_figure_has_letters_in_correct_order(ByVal letter As Char)
-        Dim actual = Make(letter)
+        Dim actual = Diamond.Make(letter)
         Dim rows = DiamondTests.Rows(actual)
 
         Dim expected = GetLetterRange("A"c, letter)
@@ -57,7 +57,7 @@ Public Class DiamondTests
 
     <DiamondProperty(Skip:="Remove this Skip property to run this test")>
     Public Sub Figure_is_symmetric_around_the_horizontal_axis(ByVal letter As Char)
-        Dim actual = Make(letter)
+        Dim actual = Diamond.Make(letter)
 
         Dim rows = DiamondTests.Rows(actual)
         Dim top = rows.TakeWhile(Function(row) Not row.Contains(letter))
@@ -68,7 +68,7 @@ Public Class DiamondTests
 
     <DiamondProperty(Skip:="Remove this Skip property to run this test")>
     Public Sub Diamond_has_square_shape(ByVal letter As Char)
-        Dim actual = Make(letter)
+        Dim actual = Diamond.Make(letter)
 
         Dim rows = DiamondTests.Rows(actual)
         Dim expected = rows.Length
@@ -78,7 +78,7 @@ Public Class DiamondTests
 
     <DiamondProperty(Skip:="Remove this Skip property to run this test")>
     Public Sub All_rows_except_top_and_bottom_have_two_identical_letters(ByVal letter As Char)
-        Dim actual = Make(letter)
+        Dim actual = Diamond.Make(letter)
 
         Dim rows = DiamondTests.Rows(actual).Where(Function(row) Not row.Contains("A"c))
 
@@ -91,7 +91,7 @@ Public Class DiamondTests
 
     <DiamondProperty(Skip:="Remove this Skip property to run this test")>
     Public Sub Bottom_left_corner_spaces_are_triangle(ByVal letter As Char)
-        Dim actual = Make(letter)
+        Dim actual = Diamond.Make(letter)
 
         Dim rows = DiamondTests.Rows(actual)
 

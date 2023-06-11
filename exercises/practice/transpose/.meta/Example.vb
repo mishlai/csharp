@@ -1,7 +1,7 @@
 Imports System.Linq
 
 Public Module Transpose
-    Public Function StringMethod(ByVal input As String) As String
+    Public Function Text(ByVal input As String) As String
         Dim rows = input.Split(ChrW(10))
         Dim maxLineLength = rows.Max(Function(x) x.Length)
         Dim transposed = New String(maxLineLength - 1) {}

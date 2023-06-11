@@ -10,13 +10,13 @@ Public Class LedgerEntry
         Me.Chg = chg
     End Sub
 
-    Public ReadOnly Property DateProp As Date
+    Public ReadOnly Property Date As Date
     Public ReadOnly Property Desc As String
     Public ReadOnly Property Chg As Decimal
 End Class
 
 Public Module Ledger
-    Public Function CreateEntryMethod(ByVal [date] As String, ByVal desc As String, ByVal chng As Integer) As LedgerEntry
+    Public Function CreateEntry(ByVal [date] As String, ByVal desc As String, ByVal chng As Integer) As LedgerEntry
         Return New LedgerEntry(Date.Parse([date], CultureInfo.InvariantCulture), desc, chng / 100.0D)
     End Function
 
@@ -119,7 +119,7 @@ Public Module Ledger
         Return result
     End Function
 
-    Public Function FormatMethod(ByVal currency As String, ByVal locale As String, ByVal entries As LedgerEntry()) As String
+    Public Function Format(ByVal currency As String, ByVal locale As String, ByVal entries As LedgerEntry()) As String
         Dim formatted = ""
         formatted += PrintHead(locale)
 

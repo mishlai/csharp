@@ -60,7 +60,7 @@ Public Class DequeTests
     End Sub
 
     <Fact(Skip:="Remove this Skip property to run this test")>
-    Public Sub All_methods_of_manipulating_the_deque_can_be_used_together()
+    Public Sub All_s_of_manipulating_the_deque_can_be_used_together()
         Dim deque = New Deque(Of Integer)()
         deque.Push(10)
         deque.Push(20)

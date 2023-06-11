@@ -6,7 +6,7 @@ Public Module OcrNumbers
     Private Const CharacterWidth As Integer = 3
     Private Const CharacterHeight As Integer = 4
 
-    Public Function ConvertMethod(ByVal input As String) As String
+    Public Function Convert(ByVal input As String) As String
         Dim lines = input.Split(ChrW(10))
 
         If lines.Length > CharacterHeight Then lines = GetTransformedInput(lines)

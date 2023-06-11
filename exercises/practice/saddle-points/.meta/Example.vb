@@ -2,7 +2,7 @@ Imports System.Collections.Generic
 Imports System.Linq
 
 Public Class SaddlePoints
-    Public Shared Function CalculateMethod(ByVal matrix As Integer(,)) As IEnumerable(Of (Integer, Integer))
+    Public Shared Function Calculate(ByVal matrix As Integer(,)) As IEnumerable(Of (Integer, Integer))
         Dim rowCount = matrix.GetLength(0)
         Dim columnCount = matrix.GetLength(1)
         Dim maxRows = SaddlePoints.Rows(matrix, rowCount, columnCount).[Select](Function(r) r.Max()).ToArray()

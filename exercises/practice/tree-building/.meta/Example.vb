@@ -5,8 +5,8 @@ Imports System.Linq
 Public Class TreeBuildingRecord
     Private Const RootRecordId As Integer = 0
 
-    Public Property ParentIdProp As Integer
-    Public Property RecordIdProp As Integer
+    Public Property ParentId As Integer
+    Public Property RecordId As Integer
 
     Public ReadOnly Property IsRoot As Boolean
         Get
@@ -21,11 +21,11 @@ Public Class Tree
         Children = New List(Of Tree)()
     End Sub
 
-    Public ReadOnly Property IdProp As Integer
+    Public ReadOnly Property Id As Integer
 
-    Public ReadOnly Property ChildrenProp As List(Of Tree)
+    Public ReadOnly Property Children As List(Of Tree)
 
-    Public ReadOnly Property IsLeafProp As Boolean
+    Public ReadOnly Property IsLeaf As Boolean
         Get
             Return Children.Count = 0
         End Get
@@ -35,7 +35,7 @@ End Class
 Public Module TreeBuilder
     Private Const RootRecordId As Integer = 0
 
-    Public Function BuildTreeMethod(ByVal records As IEnumerable(Of TreeBuildingRecord)) As Tree
+    Public Function BuildTree(ByVal records As IEnumerable(Of TreeBuildingRecord)) As Tree
         Dim orderedRecords = GetOrderedRecords(records)
 
         If orderedRecords.Count = 0 Then Throw New ArgumentException()

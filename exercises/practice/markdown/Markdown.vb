@@ -25,7 +25,7 @@ Public Module Markdown
         Return Markdown.Parse(markdown, "_", "em")
     End Function
 
-    Private Function ParseTextMethod(ByVal markdown As String, ByVal list As Boolean) As String
+    Private Function ParseText(ByVal markdown As String, ByVal list As Boolean) As String
         Dim parsedText = Markdown.Parse_(Markdown.Parse__(markdown))
 
         If list Then
@@ -108,7 +108,7 @@ Public Module Markdown
         Return result
     End Function
 
-    Public Function ParseMethod(ByVal markdown As String) As String
+    Public Function Parse(ByVal markdown As String) As String
         Dim lines = markdown.Split(ChrW(10))
         Dim result = ""
         Dim list = False

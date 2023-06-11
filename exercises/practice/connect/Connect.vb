@@ -1,6 +1,6 @@
 Imports System
 
-Public Enum ConnectWinnerType
+Public Enum ConnectWinner
     White
     Black
     None
@@ -11,7 +11,7 @@ Public Class Connect
         Throw New NotImplementedException("You need to implement this function.")
     End Sub
 
-    Public Function ResultMethod() As ConnectWinner
+    Public Function Result() As ConnectWinner
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 End Class

@@ -3,7 +3,7 @@ Imports System.Collections.Generic
 Imports System.Linq
 
 Public Module Say
-    Public Function InEnglishMethod(ByVal number As Long) As String
+    Public Function InEnglish(ByVal number As Long) As String
         If number < 0L OrElse number >= 1000000000000L Then
             Throw New ArgumentOutOfRangeException("Number out of range.")
         End If

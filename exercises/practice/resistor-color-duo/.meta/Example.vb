@@ -3,7 +3,7 @@ Imports System.Collections.Generic
 Imports System.Linq
 
 Public Module ResistorColorDuo
-    Public Function ValueMethod(ByVal colors As String()) As Integer
+    Public Function Value(ByVal colors As String()) As Integer
         Return concat(colors.Take(2).Select(Function(c) Array.IndexOf(AllColors, c)))
     End Function
 

@@ -31,7 +31,7 @@ Public Module ScrabbleScore
 {"z"c, 10}
 }
 
-    Public Function ScoreMethod(ByVal input As String) As Integer
+    Public Function Score(ByVal input As String) As Integer
         If String.IsNullOrWhiteSpace(input) Then Return 0
 
         Return input.ToLower().Sum(Function(x) LetterScores(x))

@@ -4,7 +4,7 @@ Imports System.Text.RegularExpressions
 Public Module Wordy
     Private ReadOnly EquationRegex As Regex = New Regex("^What is (?<left>-?\d+)(?<operations> (?<operand>plus|minus|multiplied by|divided by) (?<right>-?\d+))*\?$", RegexOptions.Compiled)
 
-    Public Function AnswerMethod(ByVal question As String) As Integer
+    Public Function Answer(ByVal question As String) As Integer
         Return Solve(Parse(question))
     End Function
 

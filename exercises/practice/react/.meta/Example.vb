@@ -6,7 +6,7 @@ Imports System.Linq
 Public Class Reactor
     Private ReadOnly cells As Dictionary(Of Integer, Cell) = New Dictionary(Of Integer, Cell)()
 
-    Public Function CreateInputCellMethod(ByVal value As Integer) As InputCell
+    Public Function CreateInputCell(ByVal value As Integer) As InputCell
         Dim inputCell = New InputCell(cells.Count, value)
         AddHandler inputCell.Changed, AddressOf CellChanged
 
@@ -15,7 +15,7 @@ Public Class Reactor
         Return inputCell
     End Function
 
-    Public Function CreateComputeCellMethod(ByVal producers As IEnumerable(Of Cell), ByVal compute As Func(Of Integer(), Integer)) As ComputeCell
+    Public Function CreateComputeCell(ByVal producers As IEnumerable(Of Cell), ByVal compute As Func(Of Integer(), Integer)) As ComputeCell
         Dim computeCell = New ComputeCell(cells.Count, producers, compute)
         cells(computeCell.Id) = computeCell
 

@@ -6,7 +6,7 @@ Public Module VariableLengthQuantity
     Private Const SevenBitsMask As UInteger = &H7fUI
     Private Const EightBitMask As UInteger = &H80UI
 
-    Public Function EncodeMethod(ByVal numbers As UInteger()) As UInteger()
+    Public Function Encode(ByVal numbers As UInteger()) As UInteger()
         Return numbers.SelectMany(New Func(Of UInteger, IEnumerable(Of UInteger))(AddressOf EncodeSingle)).ToArray()
     End Function
 
@@ -32,7 +32,7 @@ Public Module VariableLengthQuantity
         Return bytes
     End Function
 
-    Public Function DecodeMethod(ByVal bytes As UInteger()) As UInteger()
+    Public Function Decode(ByVal bytes As UInteger()) As UInteger()
         Dim numbers = New List(Of UInteger)()
         Dim tmp = 0UI
 

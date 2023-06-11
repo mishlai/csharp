@@ -2,7 +2,7 @@ Imports System.Linq
 Imports System.Text.RegularExpressions
 
 Public Class PigLatin
-    Public Shared Function TranslateMethod(ByVal word As String) As String
+    Public Shared Function Translate(ByVal word As String) As String
         Return String.Join(" ", word.Split(" "c).Select(Function(x) PigLatin.TranslateWord(x)))
     End Function
 

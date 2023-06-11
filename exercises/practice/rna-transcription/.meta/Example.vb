@@ -10,7 +10,7 @@ Public Module RnaTranscription
 {"A"c, "U"c}
 }
 
-    Public Function ToRnaMethod(ByVal nucleotide As String) As String
+    Public Function ToRna(ByVal nucleotide As String) As String
         If nucleotide.Any(Function(x) Not DnaToRna.ContainsKey(x)) Then
             Throw New ArgumentException("invalid nucleotide")
         End If

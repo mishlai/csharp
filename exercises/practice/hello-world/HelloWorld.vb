@@ -1,5 +1,5 @@
 Public Module HelloWorld
-    Public Function HelloMethod() As String
+    Public Function Hello() As String
         Return "Goodbye, Mars!"
     End Function
 End Module

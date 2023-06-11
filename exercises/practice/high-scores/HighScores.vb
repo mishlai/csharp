@@ -6,19 +6,19 @@ Public Class HighScores
         Throw New NotImplementedException()
     End Sub
 
-    Public Function ScoresMethod() As List(Of Integer)
+    Public Function Scores() As List(Of Integer)
         Throw New NotImplementedException()
     End Function
 
-    Public Function LatestMethod() As Integer
+    Public Function Latest() As Integer
         Throw New NotImplementedException()
     End Function
 
-    Public Function PersonalBestMethod() As Integer
+    Public Function PersonalBest() As Integer
         Throw New NotImplementedException()
     End Function
 
-    Public Function PersonalTopThreeMethod() As List(Of Integer)
+    Public Function PersonalTopThree() As List(Of Integer)
         Throw New NotImplementedException()
     End Function
 End Class

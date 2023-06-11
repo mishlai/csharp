@@ -1,7 +1,7 @@
 Imports System
 
 Public Module Hamming
-    Public Function DistanceMethod(ByVal firstStrand As String, ByVal secondStrand As String) As Integer
+    Public Function Distance(ByVal firstStrand As String, ByVal secondStrand As String) As Integer
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 End Module

@@ -22,7 +22,7 @@ Public Class SimpleLinkedList(Of T)
         Next
     End Sub
 
-    Public Property CountProp As Integer = 0
+    Public Property Count As Integer = 0
         Get
             Return _CountProp
         End Get
@@ -31,7 +31,7 @@ Public Class SimpleLinkedList(Of T)
         End Set
     End Property
 
-    Public Sub PushMethod(ByVal value As T)
+    Public Sub Push(ByVal value As T)
         Dim node = New Node With {
             .Value = value,
             .[Next] = head
@@ -40,7 +40,7 @@ Public Class SimpleLinkedList(Of T)
         Count += 1
     End Sub
 
-    Public Function PopMethod() As T
+    Public Function Pop() As T
         If head Is Nothing Then
             Throw New InvalidOperationException("List is empty!")
         End If

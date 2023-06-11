@@ -5,7 +5,7 @@ Imports System.Text.RegularExpressions
 Public Class PhoneNumber
     Private Shared ReadOnly phoneNumberFormat As Regex = New Regex("^1?([2-9][0-9]{2}[2-9][0-9]{6})$")
 
-    Public Shared Function CleanMethod(ByVal phoneNumber As String) As String
+    Public Shared Function Clean(ByVal phoneNumber As String) As String
         Dim digits = String.Join(String.Empty, phoneNumber.Where(Function(l) l >= "0"c AndAlso l <= "9"c))
 
         Dim match = PhoneNumber.phoneNumberFormat.Match(digits)

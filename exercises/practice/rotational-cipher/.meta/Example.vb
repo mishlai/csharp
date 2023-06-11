@@ -4,7 +4,7 @@ Public Module RotationalCipher
     Private Const LowerCaseLetters As String = "abcdefghijklmnopqrstuvwxyz"
     Private Const UpperCaseLetters As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-    Public Function RotateMethod(ByVal text As String, ByVal shiftKey As Integer) As String
+    Public Function Rotate(ByVal text As String, ByVal shiftKey As Integer) As String
         Return New String(text.[Select](Function(letter) Rotate(letter, shiftKey)).ToArray())
     End Function
 

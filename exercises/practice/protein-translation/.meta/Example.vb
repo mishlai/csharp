@@ -2,7 +2,7 @@ Imports System
 Imports System.Collections.Generic
 
 Public Module ProteinTranslation
-    Public Function ProteinsMethod(ByVal strand As String) As String()
+    Public Function Proteins(ByVal strand As String) As String()
         Dim results = New List(Of String)()
 
         For i As Integer = 0 To strand.Length / 3 - 1

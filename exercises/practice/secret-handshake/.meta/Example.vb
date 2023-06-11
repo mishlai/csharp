@@ -9,7 +9,7 @@ Public Class SecretHandshake
     {8, "jump"}
 }
 
-    Public Shared Function CommandsMethod(ByVal commandValue As Integer) As String()
+    Public Shared Function Commands(ByVal commandValue As Integer) As String()
         Dim lCommands = New List(Of String)()
         For Each value In SecretHandshake.CommandValues.OrderBy(Function(x) x.Key)
             If (commandValue And value.Key) <> 0 Then

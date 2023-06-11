@@ -1,7 +1,7 @@
 Imports System
 Imports System.Collections.Generic
 
-Public Enum OwnerType
+Public Enum Owner
     None
     Black
     White
@@ -12,11 +12,11 @@ Public Class GoCounting
         Throw New NotImplementedException("You need to implement this function.")
     End Sub
 
-    Public Function TerritoryMethod(ByVal coord As (Integer, Integer)) As Tuple(Of Owner, HashSet(Of (Integer, Integer)))
+    Public Function Territory(ByVal coord As (Integer, Integer)) As Tuple(Of Owner, HashSet(Of (Integer, Integer)))
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 
-    Public Function TerritoriesMethod() As Dictionary(Of Owner, HashSet(Of (Integer, Integer)))
+    Public Function Territories() As Dictionary(Of Owner, HashSet(Of (Integer, Integer)))
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 End Class

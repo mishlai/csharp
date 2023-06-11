@@ -73,7 +73,7 @@ Public Class RestApi
         users = JsonSerializer.Deserialize(Of List(Of User))(database)
     End Sub
 
-    Public Function GetMethod(ByVal url As String, ByVal Optional payload As String = Nothing) As String
+    Public Function Get(ByVal url As String, ByVal Optional payload As String = Nothing) As String
         If Not Equals(payload, Nothing) Then
             Dim values = JsonSerializer.Deserialize(Of Dictionary(Of String, IEnumerable(Of String)))(payload)
             Dim requestedUsers = values("users")
@@ -83,7 +83,7 @@ Public Class RestApi
         Return JsonSerializer.Serialize(users)
     End Function
 
-    Public Function PostMethod(ByVal url As String, ByVal payload As String) As String
+    Public Function Post(ByVal url As String, ByVal payload As String) As String
         If Equals(url, "/add") Then
             Dim values = JsonSerializer.Deserialize(Of Dictionary(Of String, String))(payload)
             Dim newUser = New User(values("user"))

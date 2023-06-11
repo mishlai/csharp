@@ -1,6 +1,6 @@
 Imports System
 
-Public Enum ScheduleType
+Public Enum Schedule
     Teenth
     First
     Second
@@ -13,7 +13,7 @@ Public Class Meetup
     Public Sub New(ByVal month As Integer, ByVal year As Integer)
     End Sub
 
-    Public Function DayMethod(ByVal dayOfWeek As DayOfWeek, ByVal schedule As Schedule) As Date
+    Public Function Day(ByVal dayOfWeek As DayOfWeek, ByVal schedule As Schedule) As Date
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 End Class

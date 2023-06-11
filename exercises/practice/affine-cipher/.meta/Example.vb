@@ -78,14 +78,22 @@ Public Module AffineCipher
     End Function
 
     Private Function FindInverse(ByVal a As Integer, ByVal b As Integer) As Integer
-        Dim x0X1Y0Y1 = Nothing
-        x0X1Y0Y1 = (1, 0, 0, 1)
+        Dim x0 = 1
+        Dim x1 = 0
+        Dim y0 = 0
+        Dim y1 = 1
 
         While a <> 0
             Dim q = b / a
-            (b, a) = (a, b Mod a)
-            (x0, x1) = (x1, x0 - q * x1)
-            (y0, y1) = (y1, y0 - q * y1)
+            Dim tmp = b Mod a
+            b = a
+            a = tmp
+            tmp = x0 - q * x1
+            x0 = x1
+            x1 = tmp
+            tmp = y0 - q * y1
+            y0 = y1
+            y1 = tmp
         End While
 
         If b > 1 Then
