@@ -47,13 +47,13 @@ Public Class SimpleLinkedListTests
         Assert.Equal(3, list.Pop())
     End Sub
 
-    Private Shared Function CreateSimpleLinkedList(ByVal value As Integer) As SimpleLinkedList(Of Integer)
+    Private Function CreateSimpleLinkedList(ByVal value As Integer) As SimpleLinkedList(Of Integer)
         Dim type = GetType(SimpleLinkedList(Of)).MakeGenericType(GetType(Integer))
         Dim constructor = type.GetConstructor(New Type() {GetType(Integer)})
         Return If(CType(constructor?.Invoke(New Object() {value}), SimpleLinkedList(Of Integer)), CreateSimpleLinkedList(New Integer() {value}))
     End Function
 
-    Private Shared Function CreateSimpleLinkedList(ParamArray values As Integer()) As SimpleLinkedList(Of Integer)
+    Private Function CreateSimpleLinkedList(ParamArray values As Integer()) As SimpleLinkedList(Of Integer)
         Dim type = GetType(SimpleLinkedList(Of)).MakeGenericType(GetType(Integer))
         Dim constructor = type.GetConstructor(New Type() {GetType(Integer())})
         Return CType(constructor.Invoke(New Object() {values}), SimpleLinkedList(Of Integer))

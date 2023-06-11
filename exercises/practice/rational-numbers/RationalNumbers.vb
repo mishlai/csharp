@@ -12,19 +12,19 @@ Public Structure RationalNumber
     Public Sub New(ByVal numerator As Integer, ByVal denominator As Integer)
     End Sub
 
-    Public Shared Operator +(ByVal r1 As RationalNumber, ByVal r2 As RationalNumber) As RationalNumber
+    Public Operator +(ByVal r1 As RationalNumber, ByVal r2 As RationalNumber) As RationalNumber
         Throw New NotImplementedException("You need to implement this operator.")
     End Operator
 
-    Public Shared Operator -(ByVal r1 As RationalNumber, ByVal r2 As RationalNumber) As RationalNumber
+    Public Operator -(ByVal r1 As RationalNumber, ByVal r2 As RationalNumber) As RationalNumber
         Throw New NotImplementedException("You need to implement this operator.")
     End Operator
 
-    Public Shared Operator *(ByVal r1 As RationalNumber, ByVal r2 As RationalNumber) As RationalNumber
+    Public Operator *(ByVal r1 As RationalNumber, ByVal r2 As RationalNumber) As RationalNumber
         Throw New NotImplementedException("You need to implement this operator.")
     End Operator
 
-    Public Shared Operator /(ByVal r1 As RationalNumber, ByVal r2 As RationalNumber) As RationalNumber
+    Public Operator /(ByVal r1 As RationalNumber, ByVal r2 As RationalNumber) As RationalNumber
         Throw New NotImplementedException("You need to implement this operator.")
     End Operator
 

@@ -92,7 +92,7 @@ Public Class DotDslTests
 
     Private Class EnumerableEqualityComparer(Of T)
         Implements IEqualityComparer(Of IEnumerable(Of T))
-        Public Shared ReadOnly Instance As EnumerableEqualityComparer(Of T) = New EnumerableEqualityComparer(Of T)()
+        Public ReadOnly Instance As EnumerableEqualityComparer(Of T) = New EnumerableEqualityComparer(Of T)()
 
         Public Function Equals(ByVal x As IEnumerable(Of T), ByVal y As IEnumerable(Of T)) As Boolean Implements IEqualityComparer(Of IEnumerable(Of T)).Equals
             Return New HashSet(Of T)(x).SetEquals(y)

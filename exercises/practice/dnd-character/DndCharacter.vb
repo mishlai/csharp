@@ -9,15 +9,15 @@ Public Class DndCharacter
     Public ReadOnly Property CharismaProp As Integer
     Public ReadOnly Property HitpointsProp As Integer
 
-    Public Shared Function ModifierMethod(ByVal score As Integer) As Integer
+    Public Function ModifierMethod(ByVal score As Integer) As Integer
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 
-    Public Shared Function AbilityMethod() As Integer
+    Public Function AbilityMethod() As Integer
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 
-    Public Shared Function GenerateMethod() As DndCharacter
+    Public Function GenerateMethod() As DndCharacter
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 End Class

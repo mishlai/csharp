@@ -12,7 +12,7 @@ Public Class SgfTree
 End Class
 
 Public Class SgfParser
-    Public Shared Function ParseTree(ByVal input As String) As SgfTree
+    Public Function ParseTree(ByVal input As String) As SgfTree
         Throw New NotImplementedException()
     End Function
 End Class

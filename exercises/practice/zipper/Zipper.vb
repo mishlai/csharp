@@ -43,7 +43,7 @@ Public Class Zipper
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 
-    Public Shared Function FromTree(ByVal tree As BinTree) As Zipper
+    Public Function FromTree(ByVal tree As BinTree) As Zipper
         Throw New NotImplementedException("You need to implement this function.")
     End Function
 End Class

@@ -30,7 +30,7 @@ Public Class AccumulateTests
         Assert.Equal("eht kciuq nworb xof cte".Split(" "c), "the quick brown fox etc".Split(" "c).Accumulate(New Func(Of String, String)(AddressOf Reverse)))
     End Sub
 
-    Private Shared Function Reverse(ByVal value As String) As String
+    Private Function Reverse(ByVal value As String) As String
         Dim array = value.ToCharArray()
         System.Array.Reverse(array)
         Return New String(array)

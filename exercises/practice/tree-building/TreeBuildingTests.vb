@@ -274,13 +274,13 @@ Public Class TreeBuildingTests
         Assert.Throws(Of ArgumentException)(Function() BuildTree(records))
     End Sub
 
-    Private Shared Sub AssertTreeIsBranch(ByVal tree As Tree, ByVal id As Integer, ByVal childCount As Integer)
+    Private Sub AssertTreeIsBranch(ByVal tree As Tree, ByVal id As Integer, ByVal childCount As Integer)
         Assert.Equal(id, tree.Id)
         Assert.False(tree.IsLeaf)
         Assert.Equal(childCount, tree.Children.Count)
     End Sub
 
-    Private Shared Sub AssertTreeIsLeaf(ByVal tree As Tree, ByVal id As Integer)
+    Private Sub AssertTreeIsLeaf(ByVal tree As Tree, ByVal id As Integer)
         Assert.Equal(id, tree.Id)
         Assert.True(tree.IsLeaf)
     End Sub

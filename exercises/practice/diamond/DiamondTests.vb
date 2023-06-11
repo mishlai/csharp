@@ -5,18 +5,18 @@ Imports System
 Imports System.Linq
 
 Public Class DiamondTests
-    Public Shared ReadOnly AllLetters As Char() = GetLetterRange("A"c, "Z"c)
-    Private Shared Function Rows(ByVal x As String) As String()
+    Public ReadOnly AllLetters As Char() = GetLetterRange("A"c, "Z"c)
+    Private Function Rows(ByVal x As String) As String()
         Return x.Split({ChrW(10)}, StringSplitOptions.None)
     End Function
 
-    Private Shared Function LeadingSpaces(ByVal x As String) As String
+    Private Function LeadingSpaces(ByVal x As String) As String
         Return x.Substring(0, x.IndexOfAny(AllLetters))
     End Function
-    Private Shared Function TrailingSpaces(ByVal x As String) As String
+    Private Function TrailingSpaces(ByVal x As String) As String
         Return x.Substring(x.LastIndexOfAny(AllLetters) + 1)
     End Function
-    Private Shared Function GetLetterRange(ByVal min As Char, ByVal max As Char) As Char()
+    Private Function GetLetterRange(ByVal min As Char, ByVal max As Char) As Char()
         Return Enumerable.Range(min, max - min + 1).[Select](Function(i) Microsoft.VisualBasic.ChrW(i)).ToArray()
     End Function
 
